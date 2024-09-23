@@ -21,8 +21,8 @@ def vis_latent(z_hat_list,savepath):
 def main():
     net_config = NetConfig()
     model = Network(net_config).eval().to("cuda")
-    img_path = "/mnt/data1/jingwengu/kodak1/kodim21.png"
-    checkpoint_path = "/mnt/data3/jingwengu/my_l3c2/iteration/checkpoint_train_700000.pth.tar"
+    img_path = "your image path"
+    checkpoint_path = "your checkpoint"
     state_dict = torch.load(checkpoint_path)
     model.load_state_dict(state_dict["model_state_dict"])
     img = Image.open(img_path).convert("RGB")
